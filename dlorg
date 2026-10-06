@@ -1,1 +1,55 @@
 #!/usr/bin/env bash
+
+# Script starts -> Destination folders are created -> while true keeps the script running ->
+# for checks each item in Downloads -> if checks if it is a regular file ->
+# case checks the file type -> File is moved to the correct folder -> Wait 2 seconds -> Repeat.
+
+
+# Defining our pathway to the Downloads folder below.
+
+DOWNLOADS="$HOME/Downloads"
+
+# Creating relevant folders in our Downloads directory. If they already exist, skip with -p.
+
+mkdir -p "$DOWNLOADS"/{text,pdfs,docs,images,videos,audio,archives,other}
+
+# Check Downloads repeatedly every 2 seconds.
+
+while true
+do
+	for file in "$DOWNLOADS"/*
+    	do 
+		if [[ -f "$file" ]]
+		then
+	
+	case "$file" in
+    *.txt)
+        mv "$file" "$DOWNLOADS/text/"
+        ;;
+    *.pdf)
+        mv "$file" "$DOWNLOADS/pdfs/"
+        ;;
+    *.doc|*.docx|*.odt)
+        mv "$file" "$DOWNLOADS/docs/"
+        ;;
+    *.jpg|*.jpeg|*.png|*.gif)
+        mv "$file" "$DOWNLOADS/images/"
+        ;;
+    *.mp4|*.mkv|*.avi)
+        mv "$file" "$DOWNLOADS/videos/"
+       ;;
+    *.mp3|*.wav)
+        mv "$file" "$DOWNLOADS/audio/"
+        ;;
+    *.zip|*.tar|*.gz)
+        mv "$file" "$DOWNLOADS/archives/"
+        ;;
+    *)
+        mv "$file" "$DOWNLOADS/other/"
+        ;;
+		esac
+	fi
+done       
+
+    sleep 2
+done
