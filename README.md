@@ -10,7 +10,6 @@ dlorg is a bash script that automatically organizes files in the downloads direc
 
 ## Before running dlorg
 
-![After organizing](images/after.png)
 ![Before organizing](images/before.png)
 
 ## Running dlorg
@@ -29,7 +28,7 @@ Navigate to the repository directory.
 
 Give the script permission to execute.
 
-- Check that the scrips has permission to execute by typing: ls -l dlorg
+- Check that the script has permission to execute by typing: ls -l dlorg
 The output should show an x in the file permission. If execution permission is missing, add it using: chmod +x dlorg
 
 The scrips should now be ready to run.
@@ -38,7 +37,7 @@ The scrips should now be ready to run.
 
 Navigate to the directory containing the dlorg script.
 start the script by typing: ./dlorg
-The script now monitors the Downloads directory and automatically moves files in the correct folders. The script is running untill manually stopped.
+The scrips now monitors the Downloads directory and automatically moves files in the correct folders. The script is running untill manually stopped.
 
 In order to stop the script, press CTRL+C in the terminal.
 
@@ -49,7 +48,7 @@ In the terminal, type: vim dlorg
 
 ![Running the script](images/script.png)
 
-- If you want to use the script to organize files in a different folder you can define another pathway. Change DOWNLOADS="$HOME/Downloads" to your prefered pathway. Just remember to check the rest of the code and change $Downloads to your correspondig folder.
+- If you want to use the script to organize files in a different folder you can change the DOWNLOADS variable to your preferred directory pathway. The rest of the script uses this variable automatically. For example, if you want to organize the Documents directory, just change DOWNLOADS="$HOME/Downloads" to DOWNLOADS="$HOME/Documents".
 
 - You can customize the directory folders by adding or removing folders that are created in the mkdir brackets.
 
@@ -64,4 +63,6 @@ LLM ChatGPT was used to help generate some parts of the script-code in order to 
 
 ## Thank you! :)
 
-Have fun using this script!  
+Have fun using this script!
+
+Last updated: 2026-10-08  
